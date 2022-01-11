@@ -1,7 +1,7 @@
 From 20fcc202ac7c76f114a92638438f39d1c0bff016 Mon Sep 17 00:00:00 2001
 From: Francisco Boni <boboniboni@gmail.com>
 Date: Tue, 11 Jan 2022 19:00:04 -0300
-Subject: [PATCH] Enable libfluidsynth
+Subject: [PATCH 1/2] Enable libfluidsynth
 
 ---
  configure.ac | 1 -
