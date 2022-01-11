@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : dosbox-x
 Version  : 0.801
-Release  : 265
+Release  : 267
 URL      : file:///aot/build/clearlinux/packages/dosbox-x/dosbox-x-v0.801.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/dosbox-x/dosbox-x-v0.801.tar.gz
 Summary  : SDL portable network library
@@ -246,6 +246,12 @@ BuildRequires : libstdc++
 BuildRequires : libtool-dev
 BuildRequires : libunwind-dev
 BuildRequires : libusb-dev
+BuildRequires : libva
+BuildRequires : libva-dev
+BuildRequires : libva-intel-driver
+BuildRequires : libva-lib
+BuildRequires : libvdpau
+BuildRequires : libvdpau-dev
 BuildRequires : libvorbis-dev
 BuildRequires : libvorbis-dev32
 BuildRequires : libvorbis-staticdev
@@ -254,12 +260,15 @@ BuildRequires : libwebp-dev
 BuildRequires : libwebp-staticdev
 BuildRequires : libxcb-dev
 BuildRequires : libxcb-lib
+BuildRequires : libxkbcommon
+BuildRequires : libxkbcommon-dev
 BuildRequires : libxkbfile-dev
 BuildRequires : libxml2
 BuildRequires : libxml2-dev
 BuildRequires : libxml2-staticdev
 BuildRequires : libxslt
 BuildRequires : libxslt-bin
+BuildRequires : libxslt-dev
 BuildRequires : lilv
 BuildRequires : lilv-dev
 BuildRequires : lilv-staticdev
@@ -276,9 +285,11 @@ BuildRequires : mda-lv2
 BuildRequires : mda-lv2-dev
 BuildRequires : mesa
 BuildRequires : mesa-dev
+BuildRequires : mesa-lib
 BuildRequires : meson
 BuildRequires : mpc-dev
 BuildRequires : mpfr-dev
+BuildRequires : nasm
 BuildRequires : nasm-bin
 BuildRequires : ncurses
 BuildRequires : ncurses-dev
@@ -326,6 +337,8 @@ BuildRequires : pkgconfig(libarchive)
 BuildRequires : pkgconfig(libgcab-1.0)
 BuildRequires : pkgconfig(librsvg-2.0)
 BuildRequires : pkgconfig(libsoup-2.4)
+BuildRequires : pkgconfig(libudev)
+BuildRequires : pkgconfig(libusb-1.0)
 BuildRequires : pkgconfig(lv2)
 BuildRequires : pkgconfig(rubberband)
 BuildRequires : pkgconfig(samplerate)
@@ -385,7 +398,17 @@ BuildRequires : vamp-sdk-dev
 BuildRequires : vamp-sdk-staticdev
 BuildRequires : wayland
 BuildRequires : wayland-dev
+BuildRequires : weston
+BuildRequires : wmctrl
 BuildRequires : xauth
+BuildRequires : xcb-proto
+BuildRequires : xcb-proto-dev
+BuildRequires : xcb-util-cursor-dev
+BuildRequires : xcb-util-dev
+BuildRequires : xcb-util-keysyms-dev
+BuildRequires : xcb-util-renderutil-dev
+BuildRequires : xcb-util-wm-dev
+BuildRequires : xcb-util-xrm-dev
 BuildRequires : xclip
 BuildRequires : xdg-dbus-proxy
 BuildRequires : xdg-desktop-portal
@@ -436,6 +459,8 @@ BuildRequires : xz-staticdev
 BuildRequires : yaml
 BuildRequires : yaml-cpp
 BuildRequires : yaml-cpp-dev
+BuildRequires : yasm-bin
+BuildRequires : zlib
 BuildRequires : zlib-dev
 BuildRequires : zlib-staticdev
 BuildRequires : zstd-dev
@@ -457,7 +482,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641936506
+export SOURCE_DATE_EPOCH=1641938195
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -547,20 +572,19 @@ export GSETTINGS_SCHEMA_DIR="/usr/share/glib-2.0/schemas"
 sd -r '\s--dirty\s' ' ' .
 sd -r 'git describe' 'git describe --abbrev=0' .
 %autogen_simple  --enable-x11 \
---enable-optimize \
+--disable-optimize \
 --enable-sdl2 \
 --enable-freetype \
 --enable-xbrz \
 --enable-alsa-midi \
 --disable-debug \
 --enable-core-inline \
---enable-fpu-x64 \
 --enable-libfluidsynth \
 --enable-opengl
 make  %{?_smp_mflags}    V=1 VERBOSE=1
 
 %install
-export SOURCE_DATE_EPOCH=1641936506
+export SOURCE_DATE_EPOCH=1641938195
 rm -rf %{buildroot}
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar

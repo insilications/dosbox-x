@@ -170,6 +170,7 @@ libogg-dev
 libogg-dev32
 libogg-staticdev
 libogg-staticdev32
+libpcap-dev
 libpng
 libpng-dev
 libpng-staticdev
