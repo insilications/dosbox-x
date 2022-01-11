@@ -337,8 +337,6 @@ BuildRequires : pkgconfig(libarchive)
 BuildRequires : pkgconfig(libgcab-1.0)
 BuildRequires : pkgconfig(librsvg-2.0)
 BuildRequires : pkgconfig(libsoup-2.4)
-BuildRequires : pkgconfig(libudev)
-BuildRequires : pkgconfig(libusb-1.0)
 BuildRequires : pkgconfig(lv2)
 BuildRequires : pkgconfig(rubberband)
 BuildRequires : pkgconfig(samplerate)
@@ -482,7 +480,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641938195
+export SOURCE_DATE_EPOCH=1641938237
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -584,7 +582,7 @@ sd -r 'git describe' 'git describe --abbrev=0' .
 make  %{?_smp_mflags}    V=1 VERBOSE=1
 
 %install
-export SOURCE_DATE_EPOCH=1641938195
+export SOURCE_DATE_EPOCH=1641938237
 rm -rf %{buildroot}
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar

@@ -1,0 +1,24 @@
+From 20fcc202ac7c76f114a92638438f39d1c0bff016 Mon Sep 17 00:00:00 2001
+From: Francisco Boni <boboniboni@gmail.com>
+Date: Tue, 11 Jan 2022 19:00:04 -0300
+Subject: [PATCH] Enable libfluidsynth
+
+---
+ configure.ac | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index a4da8d3ca..39e6c61bc 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -652,7 +652,6 @@ fi
+ 
+ dnl LIBRARY TEST: Fluidsynth support
+ AC_CHECK_HEADER(fluidsynth.h,have_fluidsynth_h=yes,)
+-AC_CHECK_LIB(fluidsynth, fluid_synth_sysex, have_fluidsynth_lib=yes,,)
+ 
+ dnl LIBRARY TEST: FreeType2
+ AH_TEMPLATE(C_FREETYPE,[Define to 1 to enable freetype support])
+-- 
+2.34.1
+
