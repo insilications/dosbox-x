@@ -225,6 +225,7 @@ libXi-lib
 libXinerama-dev
 libxkbcommon
 libxkbcommon-dev
+libxkbfile
 libxkbfile-dev
 libxml2
 libxml2-dev
@@ -321,10 +322,16 @@ rubberband-staticdev
 sassc
 SDL2
 SDL2-dev
+SDL2_gfx
+SDL2_gfx-dev
 SDL2_image
 SDL2_image-dev
+SDL2_mixer
+SDL2_mixer-dev
 SDL2_net
 SDL2_net-dev
+SDL2_ttf
+SDL2_ttf-dev
 sed
 serd
 serd-dev

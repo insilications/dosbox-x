@@ -1,6 +1,7 @@
---enable-x11
+--disable-x11
 --disable-optimize
 --enable-sdl2
+--disable-sdl
 --enable-freetype
 --enable-xbrz
 --enable-alsa-midi
