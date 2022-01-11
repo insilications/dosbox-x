@@ -6,6 +6,5 @@
 --enable-alsa-midi
 --disable-debug
 --enable-core-inline
---enable-fpu-x64
 --enable-libfluidsynth
 --enable-opengl
