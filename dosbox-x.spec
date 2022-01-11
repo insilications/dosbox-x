@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : dosbox-x
 Version  : 0.801
-Release  : 276
+Release  : 277
 URL      : file:///aot/build/clearlinux/packages/dosbox-x/dosbox-x-v0.801.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/dosbox-x/dosbox-x-v0.801.tar.gz
 Summary  : SDL portable network library
@@ -491,7 +491,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641940560
+export SOURCE_DATE_EPOCH=1641940852
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -594,7 +594,7 @@ sd -r 'git describe' 'git describe --abbrev=0' .
 make  %{?_smp_mflags}    V=1 VERBOSE=1
 
 %install
-export SOURCE_DATE_EPOCH=1641940560
+export SOURCE_DATE_EPOCH=1641940852
 rm -rf %{buildroot}
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
