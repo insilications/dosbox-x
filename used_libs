@@ -1,11 +1,11 @@
-ld-linux-x86-64.so.2
 libGL.so.1
 libSDL2-2.0.so.0
 libSDL2_net-2.0.so.0
 libasound.so.2
 libc.so.6
-libglib-2.0.so.0
-libgmodule-2.0.so.0
-libgomp.so.1
+libfluidsynth.so.3
+libfreetype.so.6
 libm.so.6
-libpipewire-0.3.so.0
+libpcap.so.1
+libpng16.so.16
+libz.so.1

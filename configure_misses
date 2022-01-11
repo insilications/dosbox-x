@@ -1,0 +1,19 @@
+Configure miss: SDLNet_Init in -lSDL_net
+Configure miss: d3d9.h
+Configure miss: d3dx9math.h
+Configure miss: g++ option to enable C++11 features
+Configure miss: if environ can be included
+Configure miss: initscr in -lpdcurses
+Configure miss: libiconv_open in -liconv
+Configure miss: lnkdos16
+Configure miss: mach/mach.h
+Configure miss: main in -lopengl32
+Configure miss: slirp/libslirp.h
+Configure miss: slirp_input in -lslirp
+Configure miss: whether Apple user wants to override the build process to produce a 32 bit binary
+Configure miss: whether Direct3D 9 display output will be enabled
+Configure miss: whether g++ accepts -g
+Configure miss: whether the compiler supports GNU Objective C++
+Configure miss: x86_64-generic-linux-gnu-CXX
+Configure miss: x86_64-generic-linux-gnu-objc++
+Configure miss: x86_64-generic-linux-gnu-objcxx
