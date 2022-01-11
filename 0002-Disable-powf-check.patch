@@ -1,14 +1,14 @@
-From 18a880bcccea6a7be8f76e7814868c91e5bff3f1 Mon Sep 17 00:00:00 2001
+From 2d2cd8d406370d630dd02963dbb5762e0093522b Mon Sep 17 00:00:00 2001
 From: Francisco Boni <boboniboni@gmail.com>
 Date: Tue, 11 Jan 2022 19:06:58 -0300
 Subject: [PATCH 2/2] Disable powf check
 
 ---
- configure.ac | 26 +++-----------------------
- 1 file changed, 3 insertions(+), 23 deletions(-)
+ configure.ac | 15 ++-------------
+ 1 file changed, 2 insertions(+), 13 deletions(-)
 
 diff --git a/configure.ac b/configure.ac
-index 39e6c61bc..1951797cc 100644
+index 39e6c61bc..f7c9c383c 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -234,15 +234,6 @@ struct dirent d_test;
@@ -37,27 +37,16 @@ index 39e6c61bc..1951797cc 100644
  dnl LIBRARY TEST: FreeType2
  AH_TEMPLATE(C_FREETYPE,[Define to 1 to enable freetype support])
  AC_ARG_ENABLE(freetype,AC_HELP_STRING([--disable-freetype],[Disable freetype support]),enable_freetype=$enableval,enable_freetype=yes)
-@@ -1107,17 +1095,9 @@ if test x$enable_x11 != xno; then
-   fi
+@@ -1115,7 +1103,8 @@ if test x$enable_libfluidsynth = xyes; then
+       LIBS="$LIBS -lfluidsynth"
+       AC_DEFINE(C_FLUIDSYNTH,1)
+     else
+-      AC_MSG_WARN([libfluidsynth MIDI synthesis not available])
++      LIBS="$LIBS -lfluidsynth"
++      AC_DEFINE(C_FLUIDSYNTH,1)
+     fi
  fi
  
--dnl FEATURE: Whether to use Fluidsynth
--AH_TEMPLATE(C_FLUIDSYNTH,[Define to 1 to enable libfluidsynth MIDI synthesis])
--AC_ARG_ENABLE(libfluidsynth,AC_HELP_STRING([--disable-libfluidsynth],[Disable libfluidsynth support]),enable_libfluidsynth=$enableval,enable_libfluidsynth=yes)
--if test x$enable_libfluidsynth = xyes; then
--    if test x$have_fluidsynth_lib = xyes -a x$have_fluidsynth_h = xyes ; then
--      LIBS="$LIBS -lfluidsynth"
--      AC_DEFINE(C_FLUIDSYNTH,1)
--    else
--      AC_MSG_WARN([libfluidsynth MIDI synthesis not available])
--    fi
--fi
-+
-+LIBS="$LIBS -lfluidsynth"
-+AC_DEFINE(C_FLUIDSYNTH,1)
- 
- dnl FEATURE: FFMPEG output support
- AH_TEMPLATE(C_AVCODEC,[Define to 1 to use FFMPEG libavcodec for video capture])
 -- 
 2.34.1
 
